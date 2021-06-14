@@ -10,6 +10,7 @@ package com.hrishikesh.binarytree;
 public class BinaryTree {
 	
 	TreeNode root;
+	int size=0;
 	
 	/**
 	 * Default constructor to make root of the tree null.
@@ -27,6 +28,7 @@ public class BinaryTree {
 		//For the first insertion, if root is null make new node as root.
 		if(root==null) {
 			root = node;
+			size++;
 		}
 		// For further insertions
 		else {
@@ -44,11 +46,20 @@ public class BinaryTree {
 			}//End While
 			if(data<parent.getData()) {
 				parent.setLeft(node);
+				size++;
 			}
 			else {
 				parent.setRight(node);
+				size++;
 			}
 		}//End else
 	}//End method
+	
+	/**
+	 * @return size of the tree
+	 */
+	public int size() {
+		return size;
+	}
 
 }
